@@ -18,7 +18,7 @@ public class Juego extends View implements SensorEventListener {
 
     Paint dibujo = new Paint();
     int altPantalla, anchoPantalla;
-    int tamPelota =15;
+    int tamPelota =25;
     int borde =10;
     float ejeX=0, ejeY=0, ejeZ=0;
     Sensor acelerometro;
@@ -37,6 +37,7 @@ public class Juego extends View implements SensorEventListener {
                 getDefaultDisplay();
         altPantalla = screen.getHeight();
         anchoPantalla = screen.getWidth();
+        setBackgroundResource(R.drawable.background);
     }
 
     @Override
@@ -80,8 +81,8 @@ public class Juego extends View implements SensorEventListener {
     @Override
     protected void onDraw(Canvas canvas) {
         dibujo.setColor(Color.GRAY);
-        canvas.drawBitmap(BitmapFactory.decodeResource(getResources(),
-                R.drawable.background),0,0,dibujo);
+        //canvas.drawBitmap(BitmapFactory.decodeResource(getResources(),
+        //        R.drawable.background),0,0,dibujo);
         canvas.drawCircle(ejeX,ejeY, ejeZ+tamPelota, dibujo);
         dibujo.setColor(Color.GREEN);
         dibujo.setTextSize(25);
